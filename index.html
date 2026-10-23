@@ -281,7 +281,7 @@
                         <li>Статистика сна</li>
                         <li>Кот не спит 24/7</li>
                     </ul>
-                    <button class="btn-pay" onclick="alert('Тут будет Platega')">Оплатить</button>
+                    <button class="btn-pay" onclick="startPayment('1 Месяц', '44.99')">Оплатить</button>
                 </div>
 
                 <!-- Тариф 3 месяца -->
@@ -300,7 +300,7 @@
                         <li>Свои темы оформления</li>
                         <li>Умные мелодии</li>
                     </ul>
-                    <button class="btn-pay" style="background: var(--green); color: #000;" onclick="alert('Тут будет Platega')">Оплатить</button>
+                    <button class="btn-pay" style="background: var(--green); color: #000;" onclick="startPayment('3 Месяца', '109.99')">Оплатить</button>
                 </div>
 
                 <!-- Тариф 6 месяцев -->
@@ -319,7 +319,7 @@
                         <li>Хардкор-режим</li>
                         <li>Приоритетная поддержка</li>
                     </ul>
-                    <button class="btn-pay" style="background: var(--red);" onclick="alert('Тут будет Platega')">Оплатить</button>
+                    <button class="btn-pay" style="background: var(--red);" onclick="startPayment('6 Месяцев', '199.99')">Оплатить</button>
                 </div>
             </div>
             
@@ -341,5 +341,19 @@
         Поддержка: <a href="https://t.me/Spitz_Studio" target="_blank">@Spitz_Studio</a>
     </div>
 
+    <!-- Скрипт для сбора контактов -->
+    <script>
+        function startPayment(tariffName, price) {
+            // Спрашиваем контакт для связи
+            let contact = prompt(`Вы выбрали тариф "${tariffName}" за ${price} ₽.\n\nВведите ваш Email или @username в Telegram (для связи и возврата):`);
+            
+            if (contact && contact.trim() !== "") {
+                alert(`Контакт сохранен: ${contact}\n\nСейчас здесь будет переход на форму оплаты Platega.`);
+                // В будущем здесь будет интеграция с Platega
+            } else {
+                alert("Вы не ввели контакт. Оплата отменена.");
+            }
+        }
+    </script>
 </body>
-    </html>
+</html>
